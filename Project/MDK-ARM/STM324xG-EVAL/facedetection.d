@@ -1,0 +1,11 @@
+.\stm324xg-eval\facedetection.o: ..\vjc\faceDetection.c
+.\stm324xg-eval\facedetection.o: ..\vjc\faceDetection.h
+.\stm324xg-eval\facedetection.o: ..\vjc\type.h
+.\stm324xg-eval\facedetection.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\stm324xg-eval\facedetection.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\stm324xg-eval\facedetection.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\stm324xg-eval\facedetection.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\stm324xg-eval\facedetection.o: ..\vjc\ObjDetectorAPI.h
+.\stm324xg-eval\facedetection.o: ..\vjc\faceDetection.h
+.\stm324xg-eval\facedetection.o: ..\vjc\type.h
+.\stm324xg-eval\facedetection.o: ..\kuart\kuart.h

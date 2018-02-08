@@ -1,0 +1,220 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\kneron_work\STM32F2-F4_Demonstration_Builder_V1.0.1\Project\MDK-ARM\Project.uvproj
+Project File Date:  02/08/2018
+
+<h2>Output:</h2>
+Build target 'STM324xG-EVAL'
+linking...
+Program Size: Code=307672 RO-data=378252 RW-data=3056 ZI-data=123692  
+FromELF: creating hex file...
+".\STM324xG-EVAL\STM324xG-EVAL.axf" - 0 Error(s), 0 Warning(s).
+Load "C:\\kneron_work\\STM32F2-F4_Demonstration_Builder_V1.0.1\\Project\\MDK-ARM\\STM324xG-EVAL\\STM324xG-EVAL.axf" 
+Set JLink Project File to "C:\kneron_work\STM32F2-F4_Demonstration_Builder_V1.0.1\Project\MDK-ARM\JLinkSettings.ini"
+* JLink Info: Device "STM32F407ZG" selected (1024 KB flash, 128 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link ARM V8 compiled Jan 31 2018 18:34:52
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: TotalIRLen = 9, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F407ZG
+VTarget = 3.313V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 1, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+</pre>
+</body>
+</html>
+warning:  #550-D: variable "M" was set but never used
+                uint32_t M=3;
+..\vjc\ObjDetectorC.c(412): warning:  #177-D: variable "index" was declared but never referenced
+        int32_t  index, root;
+..\vjc\ObjDetectorC.c(412): warning:  #177-D: variable "root" was declared but never referenced
+        int32_t  index, root;
+..\vjc\ObjDetectorC.c(417): warning:  #550-D: variable "nWeak" was set but never used
+        uint32_t nWeak, jump, w;
+..\vjc\ObjDetectorC.c(417): warning:  #177-D: variable "jump" was declared but never referenced
+        uint32_t nWeak, jump, w;
+..\vjc\ObjDetectorC.c(557): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                windowSizeWidth = (uint32_t)((FACE_MODEL_X_SIZE * sFactor) + 0.5);
+..\vjc\ObjDetectorC.c(558): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                windowSizeHeight = (uint32_t)((FACE_MODEL_Y_SIZE * sFactor) + 0.5);
+..\vjc\ObjDetectorC.c(559): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                scaleImgWidth = (uint32_t)((srcWidth * (1/sFactor)) + 0.5);
+..\vjc\ObjDetectorC.c(560): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                scaleImgHeight = (uint32_t)((srcHeight * (1/sFactor)) + 0.5);
+..\vjc\ObjDetectorC.c(587): warning:  #68-D: integer conversion resulted in a change of sign
+                sumStride = (sumStride + 16 - 1) & -16;
+..\vjc\ObjDetectorC.c(614): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                stepSize = sFactor > 2. ? 1 : stepSize;
+..\vjc\ObjDetectorC.c(624): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                                        cf.topx = (uint32_t)((x*sFactor) + 0.5);
+..\vjc\ObjDetectorC.c(625): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                                        cf.topy = (uint32_t)((y*sFactor) + 0.5);
+..\vjc\ObjDetectorC.c(514): warning:  #177-D: variable "fW" was declared but never referenced
+        uint32_t x, y, fi, offset, minFaceSize, maxFaceSizeWidth, maxFaceSizeHeight, fX, fY, fW, fH, stepSize;
+..\vjc\ObjDetectorC.c(515): warning:  #177-D: variable "maskStride" was declared but never referenced
+        uint32_t nCandidate, scaleImgStride, maskStride, sumStride;
+..\vjc\ObjDetectorC.c(517): warning:  #177-D: variable "mask" was declared but never referenced
+        uint8_t *scaleImg = NULL, *mask = NULL, *srcHisteq = NULL;
+..\vjc\ObjDetectorC.c(525): warning:  #177-D: variable "foundCandidate" was declared but never referenced
+        uint32_t foundCandidate;
+..\vjc\ObjDetectorC.c(689): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+                        ptr_[j] = (uint8_t)(((fConversion * histogram[(uint32_t)(ptr[j])])) + 0.5);
+..\vjc\ObjDetectorC.c(800): warning:  #177-D: variable "raster2" was declared but never referenced
+        uint16_t *raster2 = (uint16_t*)(((uint32_t)(&raster[srcWidth]) + 31) & ~31);
+..\vjc\ObjDetectorC.c: 27 warnings, 0 errors
+linking...
+Program Size: Code=307672 RO-data=378252 RW-data=3056 ZI-data=123692  
+FromELF: creating hex file...
+".\STM324xG-EVAL\STM324xG-EVAL.axf" - 0 Error(s), 27 Warning(s).
+s) exceeds limit (131072 bytes). Region contains 64 bytes of padding and 0 bytes of veneers (total 64 bytes of linker generated content).
+Finished: 0 information, 0 warning and 1 error messages.
+".\STM324xG-EVAL\STM324xG-EVAL.axf" - 1 Error(s), 27 Warning(s).
+Target not created
+24xg_eval_lcd.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching gl_fonts.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm324xg_audio_recorder.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_ethernet.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching image_bmp.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_msc_core.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching tcp_in.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_camera.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm324xg_eval_ioe.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm324xg_eval_sdio_sd.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm324xg_audio_codec.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching ff.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching heap_2.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching objdetectorc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_msc_bot.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching tcpip.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching tcp_in.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching facedetection.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching lcdhal.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_core.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm32f4x7_eth.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm32f4xx_rcc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching gl_mgr.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching image_jpeg.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mem.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching facedetection.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mod_core.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbd_req.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching messages.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_rtc.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching graphicobject.o(.bss).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching wavprocess.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching ip.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching netif.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching eth_bsp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching ff.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching camera_api.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching main.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching image_bmp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching tschal.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching ethernetif.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_rtc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm32xxx_it.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usb_bsp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_image.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching image_jpeg.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_usbd.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching jdatadst.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching jdatasrc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching dhcp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching raw.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching udp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mvars.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mvars.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching errno.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_stdreq.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching fatfs_drv.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching sys_arch.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching gl_ext.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_msc_scsi.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching etharp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6407E: Sections of aggregate size 0x3f0 bytes could not fit into .ANY selector(s).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 64 error messages.
+".\STM324xG-EVAL\STM324xG-EVAL.axf" - 64 Error(s), 27 Warning(s).
+Target not created
+ L6406E: No space in execution regions with .ANY selector matching camera_api.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching main.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching image_bmp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching tschal.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching ethernetif.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_rtc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching stm32xxx_it.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usb_bsp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_image.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching image_jpeg.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_usbd.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching jdatadst.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching jdatasrc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching dhcp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching raw.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching udp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mvars.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mvars.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching errno.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_stdreq.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching fatfs_drv.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching sys_arch.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching gl_ext.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_msc_scsi.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching etharp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6407E: Sections of aggregate size 0xc94 bytes could not fit into .ANY selector(s).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 91 error messages.
+".\STM324xG-EVAL\STM324xG-EVAL.axf" - 91 Error(s), 27 Warning(s).
+Target not created
+tor matching image_jpeg.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching app_usbd.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching port_cm4.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching jdatadst.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching jdatasrc.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching dhcp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching raw.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching udp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mvars.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching mvars.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching errno.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_stdreq.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching fatfs_drv.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching sys_arch.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching gl_ext.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching usbh_msc_scsi.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6406E: No space in execution regions with .ANY selector matching etharp.o(.data).
+.\STM324xG-EVAL\STM324xG-EVAL.axf: Error: L6407E: Sections of aggregate size 0x117a8 bytes could not fit into .ANY selector(s).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 110 error messages.
+".\STM324xG-EVAL\STM324xG-EVAL.axf" - 110 Error(s), 27 Warning(s).
+Target not created
