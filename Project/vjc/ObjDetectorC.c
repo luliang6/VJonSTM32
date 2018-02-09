@@ -1,3 +1,4 @@
+
 #include <math.h>
 #include <errno.h>
 #include "ObjDetectorC.h"
@@ -19,7 +20,7 @@ typedef struct _stripRange {
 
 } Range;
 
-static void *buffer = NULL;
+//static void *buffer = NULL;
 icvRect *candidateResult = NULL;
 uint32_t nCandidate;
 cvFacedetectResult *pre_result=NULL;
@@ -52,29 +53,37 @@ int set_param( char* name, float value) {
 
 }
 
-//// object detection API implementation ///
+//// object detection API implementation
 
-// uint8_t buffer_a[5000];
+void *buffer = NULL;
 
 bool init_object_detection(uint32_t Height,uint32_t Width,cvFacedetectParameters *param) {
+	
 	param->maxSize = 300;
 	param->minSize = 20;
 //	param->scaleFactor =  1.2;//1.259;
 	param->stepSize = 2;
 
-
 	param->focal_length = 1000;
 	param->camera_height = 3;
 
-	//buffer = buffer_a;
+	
 	// init scratch buffer, to do, consider the hardware memory requirement.
 	int maxDetectedFaceNum = 5;
 
 //	int memSize = (4 * Width * Height) + ((Width+9) * (Height+1)* 2) + (4788*2*4+200) + maxDetectedFaceNum * 100 * 16;
 	int memSize = 1024 * 40;// 24 -> 60
-
-	buffer = malloc( (memSize * sizeof(uint8_t)));// byte
-
+	
+	buffer = (uint8_t*) 0x68038400;
+	if(buffer!=NULL) {
+		KUART_Output("malloc successed!");
+	} else {
+		KUART_Output("malloc failed!");
+		return false;
+	}
+	
+	/*
+	buffer = malloc( (memSize * sizeof(uint8_t)));// byte buffer = 0x2001 4090
 	if(buffer!=NULL) {
 		//cout << "init_face_detection 3" << endl;
 		memset(buffer,0,(memSize * sizeof(uint8_t)));
@@ -84,15 +93,18 @@ bool init_object_detection(uint32_t Height,uint32_t Width,cvFacedetectParameters
 		KUART_Output("malloc failed!");
 		return false;
 	}
-
+	*/
 	nCandidate =0;
 	return true;
+	
 }
 
 void deinit_object_detection() {
+	
 	if(buffer) {
 		free(buffer);
 	}
+	
 }
 
 bool object_detection_process(uint8_t * __restrict src,
@@ -126,7 +138,8 @@ bool object_detection_process(uint8_t * __restrict src,
 			float distance = para->focal_length* para->camera_height / y;
 			result[i].distance = distance;
 		}
-		//
+		
+		
 	}
 	pre_result = result;
 
@@ -263,7 +276,7 @@ uint32_t icvGrouprectangular(icvRect *rectList, uint32_t rectNum, uint32_t group
 	}
 
 	for( i = 0; i < nRecClass; i++ ) {
-		float32_t s = 1.f/rectMergNum[i];
+		float32_t s = 1.0f/rectMergNum[i];
 		rectClass[i].topx = (uint32_t)((rectClass[i].topx*s) + 0.5);
 		rectClass[i].topy = (uint32_t)((rectClass[i].topy*s) + 0.5);
 		rectClass[i].width = (uint32_t)((rectClass[i].width*s) + 0.5);
@@ -600,7 +613,6 @@ uint32_t icvObjectDetection(  uint8_t * __restrict src,
 			//2 pointer feature
 
 			feature[fi].p[0] = ptr+ fX+(sumStride*fY);
-
 			uint16_t a = sumStride * fH;
 
 			feature[fi].p[1] = feature[fi].p[0] + a;
@@ -608,18 +620,15 @@ uint32_t icvObjectDetection(  uint8_t * __restrict src,
 
 		}
 
-
-
-
-		stepSize = sFactor > 2. ? 1 : stepSize;
+		stepSize = sFactor > 2. ? 1 : stepSize;// stepSize = 2
 		//	foundCandidate = 0;
 		for(y = 0; y < (uint32_t)processingRectSizeHeight; y += stepSize) {
 			for(x = 0; x < (uint32_t)processingRectSizeWidth; x += stepSize ) {
 
-				offset = y * (sumStride) + x;
-				KUART_Output("<begin icvRunFeature>");
-				resultRunFearure = icvRunFeature( feature, offset, &confidance, sumStride,x, FACE_MODEL_N_STAGES);
-				KUART_Output("<end icvRunFeature>");
+				offset = y * (sumStride) + x;// sumStride = 168
+				
+				resultRunFearure = icvRunFeature( feature, offset, &confidance, sumStride,x, FACE_MODEL_N_STAGES);// resultRunFeature = -1;
+				
 				if( resultRunFearure > 0 ) {
 					cf.topx = (uint32_t)((x*sFactor) + 0.5);
 					cf.topy = (uint32_t)((y*sFactor) + 0.5);
@@ -634,8 +643,8 @@ uint32_t icvObjectDetection(  uint8_t * __restrict src,
 		buf = (uint8_t*)buf - sumStride * (scaleImgHeight+1) * sizeof(uint16_t)  - 16;
 		buf = (uint8_t*)buf - scaleImgWidth * scaleImgHeight * sizeof(uint8_t) - 16;
 	}
+	
 	KUART_Output("<5>");
-
 
 	feature = NULL;
 
@@ -660,6 +669,8 @@ uint32_t icvObjectDetection(  uint8_t * __restrict src,
 	KUART_Output("<end icvObjectDetection>");
 	return 1;
 }
+															
+
 
 static uint32_t histogram[256];
 void icvhistogramEqualizeImage( const uint8_t * __restrict src, uint32_t srcWidth, uint32_t srcHeight, uint32_t srcStride, uint8_t * __restrict dst) {
@@ -734,6 +745,7 @@ void cvIntegrateImage( const uint8_t* __restrict src,
 		iimg    += dstStride;
 	}
 }
+
 
 #define MN_DIV_Q_BITS            32
 static const uint32_t mn_div_table[401] = {
@@ -859,3 +871,4 @@ void cvScaleDown(const uint8_t* __restrict src,
 	free(raw_buf);
 }
 
+ 

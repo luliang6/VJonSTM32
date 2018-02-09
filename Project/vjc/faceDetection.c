@@ -1,3 +1,4 @@
+
 #include "faceDetection.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -12,16 +13,13 @@ int _width;
 float _fov;
 float _disWidthProduct; //pixels in image * distance = Constant, set the constant
 
-
 int fd_detect_face(uint8_t *frame, int width, int height, FaceDetected  *faces, uint32 *count)
 {
-    KUART_Output("begin fd_detect_face \n");
 
     cvFacedetectResult result[25];
     float adjacentLength = (_width * 0.5)  /  tan( _fov * 0.5 * PI / 180.0) ; //ctg
     float oppositeLength;
     int ret = object_detection_process(frame, width, height, width, &detParam,  20, count, result);
-	KUART_Output("2# \n");
 
     uint32 i = 0;
     for( ; i < *count; i++)
@@ -37,7 +35,6 @@ int fd_detect_face(uint8_t *frame, int width, int height, FaceDetected  *faces, 
         faces[i].angle = atan(oppositeLength / adjacentLength) * 180 / PI;
 
     }
-	KUART_Output("3#  \n");
     return 0;
 }
 

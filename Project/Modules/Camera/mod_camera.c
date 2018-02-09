@@ -454,7 +454,6 @@ static void return_from_capture (void)
 * @param  None
 * @retval None
 */
-
 static void goto_start_capture(void)
 {
     uint8_t  pbuf[100];

@@ -60,12 +60,11 @@ uint8_t Save_Image_To_File (uint8_t *path, uint8_t *file_name, uint8_t image_for
 {
 	KUART_Init();
 	KUART_Output("Hello!");
-
 	
     if(image_format == 0)
     {
         return Save_Bmp_To_File (path, file_name);
-    }
+    }	
     else
     {
         return Save_Jpg_To_File (path, file_name);
@@ -94,7 +93,6 @@ static uint8_t Save_Bmp_To_File (uint8_t *path, uint8_t *file_name)
         }
     }
 
-
     // Convert RGB16 image to RGB24
     // SrcData的地址是0x68038400
     // DestData的地址是0x680a8c00
@@ -116,7 +114,7 @@ static uint8_t Save_Bmp_To_File (uint8_t *path, uint8_t *file_name)
 
         *pDestGray = (uint8_t)((30 * bgr_r + 59 * bgr_g + 11 * bgr_b + 50) * 1.0f / 100);
         pDestGray++;
-
+			
     }
 		
 	// 人脸检测
@@ -135,13 +133,10 @@ static uint8_t Save_Bmp_To_File (uint8_t *path, uint8_t *file_name)
 
     uint8* frame = (uint8_t *) ImageBuffer.DestData;
     //int nFace = 0;
-		uint32 nFace = 0;
-
-
-	KUART_Output("_____________fd_detect_face");
+	uint32 nFace = 0;
 	
 	fd_detect_face(frame, Width, Height, result, &nFace);
-
+	
 	fd_free();
 	
 	/*
